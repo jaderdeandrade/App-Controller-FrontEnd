@@ -19,6 +19,7 @@ import { API_CONFIG } from '../../config/api.config';
 export class CategoriasPage {
 
   baseURL: string = API_CONFIG.baseURL;
+  imagemBaseURL: string = API_CONFIG.imagemBaseURL;
 
   items: CategoriaDTO[];
 
