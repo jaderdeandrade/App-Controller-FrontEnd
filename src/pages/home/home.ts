@@ -31,12 +31,15 @@ export class HomePage {
         this.menu.swipeEnable(true);
   }
 
-  login() {
-    this.auth.authenticate(this.creds).subscribe(response =>{
-      console.log(response.headers.get('Autorization'));
-      this.navCtrl.setRoot('CategoriasPage');
-    })
-    console.log(this.creds);
+
+    login() {
+      this.auth.authenticate(this.creds)
+        .subscribe(response => {
+          this.auth.successfulLogin(response.headers.get('Authorization'));
+          this.navCtrl.setRoot('CategoriasPage');
+        },
+        error => {});    
+    } 
     
-  }
+ 
 }
